@@ -36,6 +36,8 @@
       "@context/*": ["./src/context/*"],
       "@config": ["./src/config/"],
       "@config/*": ["./src/config/*"],
+      "@content": ["./src/content"],
+      "@content/*": ["./src/content/*"],
       "@utils": ["./src/utils/"],
       "@utils/*": ["./src/utils/*"]
     }

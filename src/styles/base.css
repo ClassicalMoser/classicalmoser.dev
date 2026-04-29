@@ -1,5 +1,3 @@
-@import '@fontsource-variable/inter';
-
 /* MARK: Accordion */
 @custom-variant dark (&:is(.dark *));
 .z-accordion-item {
@@ -1369,7 +1367,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter Variable', sans-serif;
+  /* Matches embedded faces in `index.css` (no @fontsource npm packages). */
+  --font-sans: 'TeX Gyre Pagella', ui-serif, serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

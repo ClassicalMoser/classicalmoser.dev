@@ -27,7 +27,14 @@ export const boundaries: BoundaryConfig[] = [
     identifier: '@components',
     dir: 'components',
     alias: '@components',
-    allowImportsFrom: ['@ui', '@hooks', '@utils', '@config'],
+    allowImportsFrom: ['@ui', '@hooks', '@utils', '@config', '@content'],
+  },
+  {
+    // Static copy and structured site data (no framework imports).
+    identifier: '@content',
+    dir: 'content',
+    alias: '@content',
+    allowImportsFrom: [],
   },
   {
     // UI primitives, installed from library.
