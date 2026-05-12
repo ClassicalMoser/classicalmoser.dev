@@ -11,6 +11,9 @@ export function SiteHeader() {
           <a href="#work" class="transition-colors hover:text-foreground">
             Work
           </a>
+          <a href="#experience" class="transition-colors hover:text-foreground">
+            Experience
+          </a>
           <a href="#focus" class="transition-colors hover:text-foreground">
             Focus
           </a>

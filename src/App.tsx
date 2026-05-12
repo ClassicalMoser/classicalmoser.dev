@@ -1,6 +1,7 @@
 import { Separator, SocialIconSprite } from '@ui';
 import {
   ConnectSection,
+  ExperienceSection,
   FocusSection,
   HeroSection,
   SiteFooter,
@@ -17,6 +18,8 @@ function App() {
       <main>
         <HeroSection />
         <WorkSection />
+        <Separator class="mx-auto max-w-5xl" />
+        <ExperienceSection />
         <Separator class="mx-auto max-w-5xl" />
         <FocusSection />
         <Separator class="mx-auto max-w-5xl" />
