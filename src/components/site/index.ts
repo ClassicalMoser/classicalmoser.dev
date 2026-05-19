@@ -4,4 +4,5 @@ export { HeroSection } from './hero-section';
 export { SiteFooter } from './site-footer';
 export { SiteHeader } from './site-header';
 export { ThemeToggle } from './theme-toggle';
-export { WorkSection } from './work-section';
+export { FeaturedWorkSection } from './featured-work-section';
+export { SideProjectsSection } from './side-projects-section';

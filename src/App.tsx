@@ -1,11 +1,12 @@
 import { Separator, SocialIconSprite } from '@ui';
 import {
   ConnectSection,
+  FeaturedWorkSection,
   FocusSection,
   HeroSection,
+  SideProjectsSection,
   SiteFooter,
   SiteHeader,
-  WorkSection,
 } from '@components';
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
 
       <main>
         <HeroSection />
-        <WorkSection />
+        <FeaturedWorkSection />
+        <SideProjectsSection />
         <Separator class="mx-auto max-w-5xl" />
         <FocusSection />
         <Separator class="mx-auto max-w-5xl" />

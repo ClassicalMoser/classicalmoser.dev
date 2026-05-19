@@ -12,34 +12,44 @@ export const person = {
 
 export const hero = {
   eyebrow: 'Software & systems',
-  headline: 'Architecture that stays trustworthy as tools—and teammates—change.',
+  headline: 'Architecture that stays trustworthy under change.',
   lead: [
     'I care most about correctness, clear boundaries, and code that is safer to change over time. That matters doubly now: agents amplify whatever structure and discipline they inherit.',
     'Most recently I led engineering at a coaching company—shipping a full web stack for thousands of learners, tightening security and validation, and refactoring in place with strangler-style migrations instead of big-bang rewrites.',
   ],
 } as const;
 
-/** Featured work — short blurbs; detail lives in repos and packages. */
-export const featuredProjects = [
+/** The production credibility artifact — given visual weight on the page. */
+export const featuredWork = {
+  title: 'LearnCraft Spanish',
+  role: 'Director of Technology · 2022–2026',
+  summary:
+    'Designed, built, and maintained the production web stack serving ~3,000 monthly active learners. Continuously delivered for four years without significant downtime or relaunch.',
+  highlights: [
+    'Migrated a plain-JavaScript monolith to strictly typed hexagonal architecture in place, using a strangler-fig pattern—no rewrite, no feature freeze.',
+    'Secured user and internal data with server-enforced RBAC, JWT-authoritative auth, and boundary-level Zod validation.',
+    'Built a mutation-tested domain core and CI-enforced architectural rules to keep the codebase safer to change as it aged.',
+  ],
+  closer:
+    'The codebase is public. Architecture, tests, CI configuration, and custom tooling are all open for review.',
+  href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
+  linkLabel: 'Inspect the codebase',
+} as const;
+
+/** Secondary work — tooling and projects in public. */
+export const sideProjects = [
   {
     title: 'eslint-plugin-import-boundaries',
     description:
-      'Opinionated ESLint rules that enforce architectural boundaries using pure AST work—no filesystem reads—so imports stay predictable in larger codebases.',
+      'Opinionated ESLint rules that enforce architectural boundaries using pure AST evaluation—no filesystem reads—so imports stay predictable as a codebase grows. Published on npm.',
     href: 'https://www.npmjs.com/package/eslint-plugin-import-boundaries',
     linkLabel: 'Package',
   },
   {
     title: 'Prevail: Ancient Battles',
     description:
-      'A pre-gunpowder tactical rules engine: stateless, schema-driven, event-sourced, and replayable—built for reliability under heavy test and mutation coverage.',
+      'A pre-gunpowder tactical rules engine: stateless, schema-driven, event-sourced, and replayable. Built for reliability under heavy test and mutation coverage, with hexagonal boundaries enforced by custom lint rules.',
     href: 'https://github.com/ClassicalMoser/prevail-rules',
-    linkLabel: 'Repository',
-  },
-  {
-    title: 'PortableNote',
-    description:
-      'An open PKM format spec with a compliance-oriented test suite and a polyglot implementation path—Rust core, Tauri bridge, Solid client—in progress.',
-    href: 'https://github.com/ClassicalMoser/portablenote',
     linkLabel: 'Repository',
   },
 ] as const;
@@ -47,7 +57,7 @@ export const featuredProjects = [
 export const focusSection = {
   title: 'How I work',
   body: [
-    'I default to domain modeling, hexagonal boundaries, and tests that catch real regressions—including mutation testing where it earns its keep. Documentation and lint rules are part of the product: they steer both humans and automation toward the same invariants.',
+    'I default to domain modeling, hexagonal boundaries, and tests that catch real regressions, including mutation testing where it earns its keep. Documentation and lint rules are part of the product: they steer both humans and automation toward the same invariants.',
     'Comfortable across the stack—React and Solid on the client, Node and PostgreSQL on the server—with Auth0, Zod, and REST in production. I enjoy the polish of UI work, but the spine of a system is where I spend the deepest time.',
   ],
   /** Light-touch stack hint; expand or trim freely. */

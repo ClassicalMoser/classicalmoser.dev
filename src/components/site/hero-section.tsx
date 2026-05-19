@@ -1,15 +1,8 @@
 import { For } from 'solid-js';
 import { person, hero } from '@content';
 import { Button } from '@ui';
-import solidLogo from '../../assets/solid.svg';
-import viteLogo from '../../assets/vite.svg';
 import profile512 from '../../assets/images/Josiah_Profile_512.png';
 import profile800 from '../../assets/images/Josiah_Profile_800.png';
-
-const stackLinks = [
-  { href: 'https://vite.dev/', label: 'Vite', logo: viteLogo },
-  { href: 'https://solidjs.com/', label: 'Solid', logo: solidLogo },
-] as const;
 
 export function HeroSection() {
   const mailto = `mailto:${person.email}`;
@@ -36,26 +29,6 @@ export function HeroSection() {
           <Button as="a" href="#work" variant="ghost" size="default">
             See featured work
           </Button>
-        </div>
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <span class="text-xs text-muted-foreground">This site</span>
-          <ul class="flex items-center gap-5">
-            <For each={[...stackLinks]}>
-              {(item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-2 text-xs text-foreground/85 transition-opacity hover:opacity-80"
-                  >
-                    <img src={item.logo} alt="" class="size-6 shrink-0" width="24" height="24" />
-                    {item.label}
-                  </a>
-                </li>
-              )}
-            </For>
-          </ul>
         </div>
       </div>
       <div class="relative flex justify-center md:justify-end">
