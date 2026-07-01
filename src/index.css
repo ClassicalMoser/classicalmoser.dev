@@ -4,7 +4,7 @@
 @import './styles/palette.css';
 @import './styles/base.css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (@media (prefers-color-scheme: dark));
 
 @font-face {
   font-family: 'Cinzel';
@@ -105,8 +105,10 @@
     background-image: var(--background-texture);
     background-size: 4px 4px;
   }
-  html.dark body {
-    background-image: var(--background-texture-dark);
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-image: var(--background-texture-dark);
+    }
   }
   html {
     @apply font-sans;

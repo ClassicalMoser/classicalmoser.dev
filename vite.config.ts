@@ -27,5 +27,5 @@ export default defineConfig({
   resolve: {
     tsconfigPaths: true,
   },
-  plugins: [tailwindcss(), solid()],
+  plugins: [tailwindcss(), solid({ ssr: true })],
 });

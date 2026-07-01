@@ -16,18 +16,32 @@ import type { BoundaryConfig } from 'eslint-plugin-import-boundaries';
  */
 export const boundaries: BoundaryConfig[] = [
   {
+    // Explicit route tree and publish paths (no filesystem routing).
+    identifier: '@router',
+    dir: 'router',
+    alias: '@router',
+    allowImportsFrom: ['@pages', '@content'],
+  },
+  {
+    // Build-time static HTML generation manifest and helpers.
+    identifier: '@ssg',
+    dir: 'ssg',
+    alias: '@ssg',
+    allowImportsFrom: ['@content', '@router'],
+  },
+  {
     // Top level pages composed from components.
     identifier: '@pages',
     dir: 'pages',
     alias: '@pages',
-    allowImportsFrom: ['@components', '@hooks', '@utils', '@config'],
+    allowImportsFrom: ['@components', '@utils', '@config', '@ui'],
   },
   {
     // Components composed from UI primitives.
     identifier: '@components',
     dir: 'components',
     alias: '@components',
-    allowImportsFrom: ['@ui', '@hooks', '@utils', '@config', '@content'],
+    allowImportsFrom: ['@ui', '@utils', '@config', '@content'],
   },
   {
     // Static copy and structured site data (no framework imports).
@@ -41,21 +55,7 @@ export const boundaries: BoundaryConfig[] = [
     identifier: '@ui',
     dir: 'ui',
     alias: '@ui',
-    allowImportsFrom: ['@hooks', '@utils', '@config'],
-  },
-  {
-    // Contexts
-    identifier: '@context',
-    dir: 'context',
-    alias: '@context',
     allowImportsFrom: ['@utils', '@config'],
-  },
-  {
-    // State orchestration hooks
-    identifier: '@hooks',
-    dir: 'hooks',
-    alias: '@hooks',
-    allowImportsFrom: ['@utils', '@context'],
   },
   {
     // Infrastructure configuration items

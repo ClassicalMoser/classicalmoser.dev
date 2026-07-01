@@ -1,22 +1,14 @@
 /* @refresh reload */
-import { ColorModeProvider, getClientColorMode } from '@context';
+import { RouterProvider } from '@tanstack/solid-router';
 import { render } from 'solid-js/web';
+import { createRouter } from '@router';
 import './index.css';
-import App from './App';
 
 const root = document.getElementById('root');
 if (!root) {
   throw new Error('Missing #root');
 }
-const initialColorMode = getClientColorMode();
-document.documentElement.classList.remove('light', 'dark');
-document.documentElement.classList.add(initialColorMode);
 
-render(
-  () => (
-    <ColorModeProvider initialColorMode={initialColorMode}>
-      <App />
-    </ColorModeProvider>
-  ),
-  root,
-);
+const router = createRouter();
+
+render(() => <RouterProvider router={router} />, root);

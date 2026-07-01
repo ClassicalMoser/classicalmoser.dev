@@ -4,7 +4,7 @@
     "target": "es2023",
     "module": "esnext",
     "lib": ["ES2023", "DOM"],
-    "types": ["vite/client"],
+    "types": ["vite/client", "node"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -30,14 +30,14 @@
       "@components/*": ["./src/components/*"],
       "@ui": ["./src/ui"],
       "@ui/*": ["./src/ui/*"],
-      "@hooks": ["./src/hooks"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@context": ["./src/context/"],
-      "@context/*": ["./src/context/*"],
       "@config": ["./src/config/"],
       "@config/*": ["./src/config/*"],
       "@content": ["./src/content"],
       "@content/*": ["./src/content/*"],
+      "@router": ["./src/router"],
+      "@router/*": ["./src/router/*"],
+      "@ssg": ["./src/ssg"],
+      "@ssg/*": ["./src/ssg/*"],
       "@utils": ["./src/utils/"],
       "@utils/*": ["./src/utils/*"]
     }

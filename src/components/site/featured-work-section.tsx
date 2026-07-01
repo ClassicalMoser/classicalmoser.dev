@@ -22,17 +22,22 @@ export function FeaturedWorkSection() {
         </div>
         <aside class="flex h-fit flex-col gap-4 border border-border/80 bg-card p-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
           <p class="text-pretty">{featuredWork.closer}</p>
-          <Button
-            as="a"
-            href={featuredWork.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            variant="outline"
-            size="default"
-            class="self-start"
-          >
-            {featuredWork.linkLabel}
-          </Button>
+          <div class="flex flex-wrap gap-3">
+            <For each={[...featuredWork.links]}>
+              {(link) => (
+                <Button
+                  as="a"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant={link.variant}
+                  size="default"
+                >
+                  {link.label}
+                </Button>
+              )}
+            </For>
+          </div>
         </aside>
       </div>
     </section>

@@ -6,8 +6,16 @@
 export const person = {
   name: 'Josiah Moser',
   location: 'Tulsa, OK',
-  email: 'Josiah@classicalmoser.dev',
+  email: 'josiah@classicalmoser.dev',
   githubUrl: 'https://github.com/ClassicalMoser',
+} as const;
+
+export const site = {
+  siteName: 'classicalmoser.dev',
+  url: 'https://classicalmoser.dev',
+  title: 'Josiah Moser · Software & systems',
+  description:
+    'Portfolio of Josiah Moser—architecture, production web systems, and open tooling. Featured work: LearnCraft Spanish (~3k MAU). Tulsa, OK.',
 } as const;
 
 export const hero = {
@@ -15,7 +23,7 @@ export const hero = {
   headline: 'Architecture that stays trustworthy under change.',
   lead: [
     'I care most about correctness, clear boundaries, and code that is safer to change over time. That matters doubly now: agents amplify whatever structure and discipline they inherit.',
-    'Most recently I led engineering at a coaching company—shipping a full web stack for thousands of learners, tightening security and validation, and refactoring in place with strangler-style migrations instead of big-bang rewrites.',
+    'Most recently I led engineering at a coaching company—shipping a subscription learning platform for thousands of learners, tightening security and validation, and refactoring in place with strangler-style migrations instead of big-bang rewrites.',
   ],
 } as const;
 
@@ -31,9 +39,19 @@ export const featuredWork = {
     'Built a mutation-tested domain core and CI-enforced architectural rules to keep the codebase safer to change as it aged.',
   ],
   closer:
-    'The codebase is public. Architecture, tests, CI configuration, and custom tooling are all open for review.',
-  href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
-  linkLabel: 'Inspect the codebase',
+    'The platform was subscription-gated and company-owned—I no longer have full access. Engineering was open-sourced while I led the team; unlisted feature walkthroughs may be available on request for serious reviewers.',
+  links: [
+    {
+      href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
+      label: 'Public repository',
+      variant: 'outline' as const,
+    },
+    {
+      href: 'https://www.learncraftspanish.com/',
+      label: 'Company site',
+      variant: 'ghost' as const,
+    },
+  ],
 } as const;
 
 /** Secondary work — tooling and projects in public. */
@@ -67,7 +85,7 @@ export const focusSection = {
 
 export const connectCopy = {
   blurb:
-    'Email is best for substantive conversations—collaborations, architecture discussions, or pointing me at a problem worth digging into.',
+    'Email is best for substantive conversations—collaborations, architecture discussions, or a LearnCraft walkthrough if you are evaluating the production work.',
 } as const;
 
 /** Social rows use icons from `SocialIconSprite`; omit entries you do not use. */

@@ -1,15 +1,13 @@
 import { CircleCheck, Info, LoaderCircle, OctagonX, TriangleAlert } from 'lucide-solid';
 import type { Component, ComponentProps, JSX } from 'solid-js';
 import { Toaster as Sonner } from 'solid-sonner';
-import { useColorMode } from '@hooks';
 
 type ToasterProps = ComponentProps<typeof Sonner>;
 
 const Toaster: Component<ToasterProps> = (props) => {
-  const { colorMode } = useColorMode();
   return (
     <Sonner
-      theme={colorMode()}
+      theme="system"
       class="toaster group"
       position="top-center"
       icons={{
