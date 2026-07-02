@@ -1,6 +1,6 @@
 /* @refresh reload */
 import { RouterProvider } from '@tanstack/solid-router';
-import { hydrate } from 'solid-js/web';
+import { hydrate, render } from 'solid-js/web';
 import { createRouter } from '@router';
 import './index.css';
 
@@ -11,4 +11,18 @@ if (!root) {
 
 const router = createRouter();
 
-hydrate(() => <RouterProvider router={router} />, root);
+const mountRoot = root;
+
+function mountApp() {
+  const app = () => <RouterProvider router={router} />;
+  const isPrerendered = mountRoot.innerHTML.trim().length > 0;
+
+  if (isPrerendered) {
+    hydrate(app, mountRoot);
+    return;
+  }
+
+  render(app, mountRoot);
+}
+
+void router.load().then(mountApp);
