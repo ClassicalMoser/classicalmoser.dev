@@ -1,8 +1,6 @@
 import { For } from 'solid-js';
-import { person, hero } from '@content';
+import { hero, person, profileImage } from '@content';
 import { Button } from '@ui';
-import profile512 from '../../assets/images/Josiah_Profile_512.png';
-import profile800 from '../../assets/images/Josiah_Profile_800.png';
 
 export function HeroSection() {
   const mailto = `mailto:${person.email}`;
@@ -34,13 +32,13 @@ export function HeroSection() {
       <div class="relative flex justify-center md:justify-end">
         <div class="relative aspect-square w-full max-w-[220px] overflow-hidden border border-border bg-card shadow-sm sm:max-w-[260px]">
           <img
-            src={profile800}
-            srcset={`${profile512} 512w, ${profile800} 800w`}
-            sizes="(min-width: 640px) 260px, 220px"
-            alt={`${person.name}`}
+            src={profileImage.src}
+            srcset={profileImage.srcSet}
+            sizes={profileImage.sizes}
+            alt={person.name}
             class="size-full object-cover"
-            width="260"
-            height="260"
+            width={profileImage.width}
+            height={profileImage.height}
             decoding="async"
             fetchpriority="high"
           />

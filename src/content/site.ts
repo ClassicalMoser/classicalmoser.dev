@@ -18,6 +18,15 @@ export const site = {
     'Portfolio of Josiah Moser—architecture, production web systems, and open tooling. Featured work: LearnCraft Spanish (~3k MAU). Tulsa, OK.',
 } as const;
 
+/** Served from `public/` — same paths at build time (SSG) and runtime. */
+export const profileImage = {
+  src: '/Josiah_Profile_800.png',
+  srcSet: '/Josiah_Profile_512.png 512w, /Josiah_Profile_800.png 800w',
+  sizes: '(min-width: 640px) 260px, 220px',
+  width: 260,
+  height: 260,
+} as const;
+
 export const hero = {
   eyebrow: 'Software & systems',
   headline: 'Architecture that stays trustworthy under change.',

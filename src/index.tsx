@@ -1,6 +1,6 @@
 /* @refresh reload */
 import { RouterProvider } from '@tanstack/solid-router';
-import { render } from 'solid-js/web';
+import { hydrate } from 'solid-js/web';
 import { createRouter } from '@router';
 import './index.css';
 
@@ -11,4 +11,4 @@ if (!root) {
 
 const router = createRouter();
 
-render(() => <RouterProvider router={router} />, root);
+hydrate(() => <RouterProvider router={router} />, root);
