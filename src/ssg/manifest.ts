@@ -1,4 +1,4 @@
-import { site } from '@content';
+import { learncraftSpanishMeta, learncraftSpanishPath, site } from '@content';
 import { staticRoutes, type StaticRoutePath } from '@router';
 
 export type PrerenderMeta = {
@@ -21,12 +21,22 @@ const homeMeta: PrerenderMeta = {
   canonical: `${site.url}/`,
   ogTitle: site.title,
   ogDescription:
-    'Architecture that stays trustworthy under change. Production systems, open tooling, and the LearnCraft Spanish stack.',
+    'Four years running the LearnCraft Spanish platform, open-source tooling, and a case study in rearchitecting under live traffic.',
+  ogImage: `${site.url}/og.png`,
+};
+
+const learncraftSpanishPageMeta: PrerenderMeta = {
+  title: learncraftSpanishMeta.title,
+  description: learncraftSpanishMeta.description,
+  canonical: `${site.url}${learncraftSpanishPath}`,
+  ogTitle: learncraftSpanishMeta.title,
+  ogDescription: learncraftSpanishMeta.description,
   ogImage: `${site.url}/og.png`,
 };
 
 const metaByPath: Record<StaticRoutePath, PrerenderMeta> = {
   '/': homeMeta,
+  [learncraftSpanishPath]: learncraftSpanishPageMeta,
 };
 
 /** Explicit publish list — extend `metaByPath` when `staticRoutes` grows. */

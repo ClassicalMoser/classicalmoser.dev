@@ -6,6 +6,8 @@
  * 2. Append its path here
  * 3. Add metadata in `src/ssg/manifest.ts`
  */
-export const staticRoutes = ['/'] as const;
+import { learncraftSpanishPath } from '@content';
+
+export const staticRoutes = ['/', learncraftSpanishPath] as const;
 
 export type StaticRoutePath = (typeof staticRoutes)[number];

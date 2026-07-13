@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import { connectCopy, person, socialLinks } from '@content';
+import { connectCopy, person, resume, socialLinks } from '@content';
 import { Button } from '@ui';
 
 export function ConnectSection() {
@@ -12,6 +12,34 @@ export function ConnectSection() {
           <h2 class="font-heading text-2xl tracking-tight sm:text-3xl">Connect</h2>
           <p class="mt-2 max-w-md text-sm text-muted-foreground sm:text-base">
             {connectCopy.blurb}
+          </p>
+          <p class="mt-3 max-w-md text-xs text-muted-foreground sm:text-sm">
+            <a
+              href={resume.pdfHref}
+              target="_blank"
+              class="underline underline-offset-4 transition-colors hover:text-foreground"
+            >
+              Résumé (PDF)
+            </a>
+            {' — '}
+            {connectCopy.resumeNote.lead}
+            <a
+              href={connectCopy.resumeNote.typstUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underline underline-offset-4 transition-colors hover:text-foreground"
+            >
+              {connectCopy.resumeNote.typstLabel}
+            </a>
+            {', '}
+            <a
+              href={resume.typstHref}
+              target="_blank"
+              class="underline underline-offset-4 transition-colors hover:text-foreground"
+            >
+              {connectCopy.resumeNote.sourceLabel}
+            </a>
+            .
           </p>
         </div>
         <Button as="a" href={mailto} variant="secondary">

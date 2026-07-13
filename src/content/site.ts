@@ -1,21 +1,30 @@
 /**
- * Portfolio copy and links — editorial, not a 1:1 export of the CV.
- * Update `src/content/site.ts` when your story or featured work changes.
+ * Portfolio copy and links. Update `src/content/site.ts` when the story or
+ * featured work changes.
  */
+
+import { learncraftSpanishPath } from './learncraft-spanish';
 
 export const person = {
   name: 'Josiah Moser',
   location: 'Tulsa, OK',
   email: 'josiah@classicalmoser.dev',
   githubUrl: 'https://github.com/ClassicalMoser',
+  linkedinUrl: 'https://www.linkedin.com/in/josiah-moser',
+} as const;
+
+/** Served from `public/` — same paths at build time (SSG) and runtime. */
+export const resume = {
+  pdfHref: '/Josiah-Moser-Resume.pdf',
+  typstHref: '/Josiah-Moser-Resume.typ',
 } as const;
 
 export const site = {
   siteName: 'classicalmoser.dev',
   url: 'https://classicalmoser.dev',
-  title: 'Josiah Moser · Software & systems',
+  title: 'Josiah Moser · Technical leadership & systems architecture',
   description:
-    'Portfolio of Josiah Moser—architecture, production web systems, and open tooling. Featured work: LearnCraft Spanish (~3k MAU). Tulsa, OK.',
+    'Josiah Moser is a software engineer and technical leader in Tulsa, OK. He built and ran the LearnCraft Spanish platform (~3,000 monthly learners) for four years and maintains open-source tooling for architectural boundaries.',
 } as const;
 
 /** Served from `public/` — same paths at build time (SSG) and runtime. */
@@ -28,11 +37,10 @@ export const profileImage = {
 } as const;
 
 export const hero = {
-  eyebrow: 'Software & systems',
-  headline: 'Architecture that stays trustworthy under change.',
+  eyebrow: 'Technical leadership · Systems architecture',
   lead: [
-    'I care most about correctness, clear boundaries, and code that is safer to change over time. That matters doubly now: agents amplify whatever structure and discipline they inherit.',
-    'Most recently I led engineering at a coaching company—shipping a subscription learning platform for thousands of learners, tightening security and validation, and refactoring in place with strangler-style migrations instead of big-bang rewrites.',
+    'For the last four years I was Director of Technology at LearnCraft Spanish, where I designed and ran a subscription learning platform used by about 3,000 monthly learners. I started as the only engineer, made the first hire in 2024, and left behind a codebase my successor now runs on his own.',
+    'I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch real regressions, migrations that don’t break users. I’m looking for a senior engineering or technical-leadership role where that discipline is welcome.',
   ],
 } as const;
 
@@ -41,14 +49,23 @@ export const featuredWork = {
   title: 'LearnCraft Spanish',
   role: 'Director of Technology · 2022–2026',
   summary:
-    'Designed, built, and maintained the production web stack serving ~3,000 monthly active learners. Continuously delivered for four years without significant downtime or relaunch.',
+    'A grammar-based quizzing and student record platform for a language coaching company. I designed and built the web stack, ran it in production for four years, and rearchitected it under live traffic without a rewrite or a relaunch.',
   highlights: [
-    'Migrated a plain-JavaScript monolith to strictly typed hexagonal architecture in place, using a strangler-fig pattern—no rewrite, no feature freeze.',
-    'Secured user and internal data with server-enforced RBAC, JWT-authoritative auth, and boundary-level Zod validation.',
-    'Built a mutation-tested domain core and CI-enforced architectural rules to keep the codebase safer to change as it aged.',
+    'Converted an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, migrating in place while feature work continued.',
+    'Locked down student data with server-enforced roles, JWT-authoritative auth, and Zod validation on everything crossing the wire.',
+    'Kept the codebase safe to hand off: a mutation-tested domain core, architecture rules that fail CI when violated, and documentation thorough enough that my successor runs the platform solo.',
+  ],
+  stats: [
+    { value: '~3,000', label: 'monthly active learners' },
+    { value: '4 years', label: 'of continuous delivery, no rewrite or relaunch' },
+    { value: '78%', label: 'of surveyed users would be “very disappointed” to lose it (n = 205)' },
   ],
   closer:
-    'The platform was subscription-gated and company-owned—I no longer have full access. Engineering was open-sourced while I led the team; unlisted feature walkthroughs may be available on request for serious reviewers.',
+    'The app sits behind a subscription, but the frontend repo is public and the case study includes recorded walkthroughs.',
+  caseStudy: {
+    href: learncraftSpanishPath,
+    label: 'Read the case study',
+  },
   links: [
     {
       href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
@@ -68,15 +85,22 @@ export const sideProjects = [
   {
     title: 'eslint-plugin-import-boundaries',
     description:
-      'Opinionated ESLint rules that enforce architectural boundaries using pure AST evaluation—no filesystem reads—so imports stay predictable as a codebase grows. Published on npm.',
+      'ESLint rules that keep imports honest as a codebase grows: architectural boundaries enforced through pure AST evaluation, no filesystem reads. Published on npm — this site lints with it.',
     href: 'https://www.npmjs.com/package/eslint-plugin-import-boundaries',
     linkLabel: 'Package',
   },
   {
     title: 'Prevail: Ancient Battles',
     description:
-      'A pre-gunpowder tactical rules engine: stateless, schema-driven, event-sourced, and replayable. Built for reliability under heavy test and mutation coverage, with hexagonal boundaries enforced by custom lint rules.',
+      'The rules engine for a tabletop-style ancient warfare game I’m designing. Stateless, event-sourced, and fully replayable, with 1,500+ tests and a ~86% mutation score.',
     href: 'https://github.com/ClassicalMoser/prevail-rules',
+    linkLabel: 'Repository',
+  },
+  {
+    title: 'PortableNote',
+    description:
+      'An open spec for portable personal notes, in progress: a compliance test suite, a hexagonal Rust core, and a SolidJS client over a Tauri bridge.',
+    href: 'https://github.com/ClassicalMoser/portablenote',
     linkLabel: 'Repository',
   },
 ] as const;
@@ -84,20 +108,29 @@ export const sideProjects = [
 export const focusSection = {
   title: 'How I work',
   body: [
-    'I default to domain modeling, hexagonal boundaries, and tests that catch real regressions, including mutation testing where it earns its keep. Documentation and lint rules are part of the product: they steer both humans and automation toward the same invariants.',
-    'Comfortable across the stack—React and Solid on the client, Node and PostgreSQL on the server—with Auth0, Zod, and REST in production. I enjoy the polish of UI work, but the spine of a system is where I spend the deepest time.',
+    'I start with the domain model and keep business logic isolated from infrastructure, so the parts that matter most are easy to test and hard to break. Documentation and lint rules get the same care as features, because they keep humans and AI tools pointed at the same invariants.',
+    'Day to day that means TypeScript end to end: React or Solid on the client, Node and PostgreSQL on the server, Zod at the boundaries. I enjoy UI polish, but architecture is where I do my deepest work.',
+    'The “classical” in classicalmoser.dev is literal — I trained as a classical musician at the University of Tulsa before I taught myself software.',
   ],
-  /** Light-touch stack hint; expand or trim freely. */
+  stackCardTitle: 'Stack & tooling',
+  stackCardDescription: 'The tools I reach for most.',
   stackHint:
     'TypeScript · Node · React · Solid · Vite · PostgreSQL · Zod · TanStack Query · Vitest · Stryker',
 } as const;
 
 export const connectCopy = {
   blurb:
-    'Email is best for substantive conversations—collaborations, architecture discussions, or a LearnCraft walkthrough if you are evaluating the production work.',
+    'If you’re hiring, or want a walkthrough of the LearnCraft work, email me. I read everything.',
+  resumeNote: {
+    lead: 'typeset in ',
+    typstLabel: 'Typst',
+    typstUrl: 'https://typst.app/',
+    sourceLabel: 'view the source',
+  },
 } as const;
 
 /** Social rows use icons from `SocialIconSprite`; omit entries you do not use. */
 export const socialLinks = [
   { href: person.githubUrl, label: 'GitHub', iconId: 'github-icon' as const },
+  { href: person.linkedinUrl, label: 'LinkedIn', iconId: 'linkedin-icon' as const },
 ] as const;

@@ -20,9 +20,21 @@ export function FeaturedWorkSection() {
             <For each={[...featuredWork.highlights]}>{(item) => <li>{item}</li>}</For>
           </ul>
         </div>
-        <aside class="flex h-fit flex-col gap-4 border border-border/80 bg-card p-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
-          <p class="text-pretty">{featuredWork.closer}</p>
+        <aside class="flex h-fit flex-col gap-5 border border-border/80 bg-card p-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <ul class="space-y-4">
+            <For each={[...featuredWork.stats]}>
+              {(stat) => (
+                <li>
+                  <p class="font-heading text-2xl tracking-tight text-foreground">{stat.value}</p>
+                  <p class="text-xs leading-snug sm:text-sm">{stat.label}</p>
+                </li>
+              )}
+            </For>
+          </ul>
           <div class="flex flex-wrap gap-3">
+            <Button as="a" href={featuredWork.caseStudy.href} variant="default" size="default">
+              {featuredWork.caseStudy.label}
+            </Button>
             <For each={[...featuredWork.links]}>
               {(link) => (
                 <Button
@@ -38,6 +50,7 @@ export function FeaturedWorkSection() {
               )}
             </For>
           </div>
+          <p class="text-pretty text-xs leading-snug sm:text-sm">{featuredWork.closer}</p>
         </aside>
       </div>
     </section>

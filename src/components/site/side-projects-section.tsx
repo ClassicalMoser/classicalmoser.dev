@@ -8,9 +8,9 @@ export function SideProjectsSection() {
       <Separator class="mx-auto max-w-5xl" />
       <section id="projects" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
         <div class="mb-10 max-w-2xl">
-          <h2 class="font-heading text-2xl tracking-tight sm:text-3xl">In public</h2>
+          <h2 class="font-heading text-2xl tracking-tight sm:text-3xl">Open source</h2>
           <p class="mt-2 text-sm text-muted-foreground sm:text-base">
-            Tooling and projects I maintain alongside client work—repos carry the full detail.
+            Tooling and projects I build in the open. The repos carry the full detail.
           </p>
         </div>
         <div class="grid gap-6 sm:grid-cols-2">

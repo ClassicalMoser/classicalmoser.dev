@@ -1,5 +1,6 @@
 import { createRootRoute, createRoute } from '@tanstack/solid-router';
-import { HomePage, RootLayout } from '@pages';
+import { HomePage, LearnCraftSpanishPage, RootLayout } from '@pages';
+import { learncraftSpanishPath } from '@content';
 
 const rootRoute = createRootRoute({
   component: RootLayout,
@@ -11,4 +12,10 @@ const indexRoute = createRoute({
   component: HomePage,
 });
 
-export const routeTree = rootRoute.addChildren([indexRoute]);
+const learncraftSpanishRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: learncraftSpanishPath,
+  component: LearnCraftSpanishPage,
+});
+
+export const routeTree = rootRoute.addChildren([indexRoute, learncraftSpanishRoute]);
