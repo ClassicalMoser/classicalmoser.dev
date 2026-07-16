@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import { hero, person, profileImage, resume } from '@content';
+import { hero, person, profileImage } from '@content';
 import { Button } from '@ui';
 
 export function HeroSection() {
@@ -19,13 +19,10 @@ export function HeroSection() {
           <For each={[...hero.lead]}>{(p) => <p>{p}</p>}</For>
         </div>
         <div class="flex flex-wrap items-center gap-3">
-          <Button as="a" href={resume.pdfHref} target="_blank" variant="default" size="default">
-            Résumé (PDF)
-          </Button>
-          <Button as="a" href={mailto} variant="outline" size="default">
+          <Button as="a" href={mailto} variant="default" size="default">
             Email me
           </Button>
-          <Button as="a" href="#work" variant="ghost" size="default">
+          <Button as="a" href="#work" variant="outline" size="default">
             See featured work
           </Button>
         </div>

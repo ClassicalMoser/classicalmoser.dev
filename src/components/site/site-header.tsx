@@ -1,13 +1,11 @@
 import { For } from 'solid-js';
 import { Menu } from 'lucide-solid';
-import { resume } from '@content';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@ui';
 
 const navLinks = [
   { href: '/#work', label: 'Work' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#about', label: 'About' },
-  { href: resume.pdfHref, label: 'Résumé', external: true },
   { href: '/#connect', label: 'Connect' },
 ] as const;
 
@@ -21,11 +19,7 @@ export function SiteHeader() {
         <nav class="hidden items-center gap-4 text-sm text-muted-foreground sm:flex">
           <For each={[...navLinks]}>
             {(link) => (
-              <a
-                href={link.href}
-                target={'external' in link && link.external ? '_blank' : undefined}
-                class="transition-colors hover:text-foreground"
-              >
+              <a href={link.href} class="transition-colors hover:text-foreground">
                 {link.label}
               </a>
             )}
@@ -50,7 +44,6 @@ export function SiteHeader() {
                   <SheetClose
                     as="a"
                     href={link.href}
-                    target={'external' in link && link.external ? '_blank' : undefined}
                     aria-label={link.label}
                     class="py-2.5 text-left text-base text-muted-foreground transition-colors hover:text-foreground"
                   >
