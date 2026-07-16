@@ -1,9 +1,10 @@
 import { createRootRoute, createRoute } from '@tanstack/solid-router';
-import { HomePage, LearnCraftSpanishPage, RootLayout } from '@pages';
+import { HomePage, LearnCraftSpanishPage, NotFoundPage, RootLayout } from '@pages';
 import { learncraftSpanishPath } from '@content';
 
 const rootRoute = createRootRoute({
   component: RootLayout,
+  notFoundComponent: NotFoundPage,
 });
 
 const indexRoute = createRoute({

@@ -9,4 +9,5 @@ export {
   CardTitle,
 } from './card';
 export { Separator } from './separator';
+export { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from './sheet';
 export { SocialIconSprite } from './social-icon-sprite';

@@ -2,6 +2,7 @@ export { ConnectSection } from './connect-section';
 export { FocusSection } from './focus-section';
 export { HeroSection } from './hero-section';
 export { LearnCraftSpanishArticle } from './learncraft-spanish-article';
+export { NotFoundSection } from './not-found-section';
 export { SiteFooter } from './site-footer';
 export { SiteHeader } from './site-header';
 export { FeaturedWorkSection } from './featured-work-section';

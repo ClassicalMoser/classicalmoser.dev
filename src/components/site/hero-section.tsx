@@ -34,8 +34,6 @@ export function HeroSection() {
         <div class="relative aspect-square w-full max-w-[220px] overflow-hidden border border-border bg-card shadow-sm sm:max-w-[260px]">
           <img
             src={profileImage.src}
-            srcset={profileImage.srcSet}
-            sizes={profileImage.sizes}
             alt={person.name}
             class="size-full object-cover"
             width={profileImage.width}

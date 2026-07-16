@@ -29,9 +29,7 @@ export const site = {
 
 /** Served from `public/` — same paths at build time (SSG) and runtime. */
 export const profileImage = {
-  src: '/Josiah_Profile_800.png',
-  srcSet: '/Josiah_Profile_512.png 512w, /Josiah_Profile_800.png 800w',
-  sizes: '(min-width: 640px) 260px, 220px',
+  src: '/Josiah_Profile_512.png',
   width: 260,
   height: 260,
 } as const;
@@ -40,7 +38,7 @@ export const hero = {
   eyebrow: 'Technical leadership · Systems architecture',
   lead: [
     'For the last four years I was Director of Technology at LearnCraft Spanish, where I designed and ran a subscription learning platform used by about 3,000 monthly learners. I started as the only engineer, made the first hire in 2024, and left behind a codebase my successor now runs on his own.',
-    'I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch real regressions, migrations that don’t break users. I’m looking for a senior engineering or technical-leadership role where that discipline is welcome.',
+    'I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch real regressions, migrations that don’t break users. I’m looking for a senior engineering or technical-leadership role building software that’s meant to last.',
   ],
 } as const;
 
@@ -110,7 +108,7 @@ export const focusSection = {
   body: [
     'I start with the domain model and keep business logic isolated from infrastructure, so the parts that matter most are easy to test and hard to break. Documentation and lint rules get the same care as features, because they keep humans and AI tools pointed at the same invariants.',
     'Day to day that means TypeScript end to end: React or Solid on the client, Node and PostgreSQL on the server, Zod at the boundaries. I enjoy UI polish, but architecture is where I do my deepest work.',
-    'The “classical” in classicalmoser.dev is literal — I trained as a classical musician at the University of Tulsa before I taught myself software.',
+    'The “classical” in classicalmoser.dev is a conviction. I trained as a classical musician, but the deeper thread is a belief in the timeless — classical architecture and urbanism, things crafted with care and pride, work meant to carry value across generations.',
   ],
   stackCardTitle: 'Stack & tooling',
   stackCardDescription: 'The tools I reach for most.',

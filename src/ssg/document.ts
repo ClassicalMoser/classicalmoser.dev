@@ -28,6 +28,7 @@ export function applyRouteMeta(html: string, meta: PrerenderMeta): string {
   let next = html;
   next = replaceTitle(next, meta.title);
   next = replaceMetaContent(next, 'name="description"', meta.description);
+  next = replaceMetaContent(next, 'name="robots"', meta.robots);
   next = replaceCanonical(next, meta.canonical);
   next = replaceMetaContent(next, 'property="og:title"', meta.ogTitle);
   next = replaceMetaContent(next, 'property="og:description"', meta.ogDescription);

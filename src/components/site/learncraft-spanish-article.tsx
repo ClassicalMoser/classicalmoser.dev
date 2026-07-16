@@ -14,9 +14,9 @@ export function LearnCraftSpanishArticle() {
           {page.title}
         </h1>
         <p class="mt-2 text-sm text-muted-foreground sm:text-base">{page.role}</p>
-        <p class="mt-6 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-          {page.lead}
-        </p>
+        <div class="mt-6 space-y-4 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+          <For each={[...page.lead]}>{(paragraph) => <p>{paragraph}</p>}</For>
+        </div>
       </header>
 
       <div class="space-y-12">

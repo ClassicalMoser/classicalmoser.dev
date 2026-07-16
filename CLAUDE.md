@@ -1,0 +1,1 @@
+Read [README.md](README.md) first — documentation in this repo is human-first, and the README is the single source of truth. [AGENTS.md](AGENTS.md) has the three facts worth knowing before your first edit.
