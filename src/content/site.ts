@@ -38,14 +38,12 @@ export const profileImage = {
 export const hero = {
   eyebrow: 'Senior Software Engineer · Systems architecture',
   lead: paragraphs`
-    For the last four years I was Director of Technology at LearnCraft Spanish, where I designed and
-    ran a subscription learning platform used by about 3,000 monthly learners. I started as the only
-    engineer, made the first hire in 2024, and left behind a codebase my successor now runs on his own.
+    For the last four years I was Director of Technology at LearnCraft Spanish, where I designed, built,
+    and matured a learning platform used by over 3,000 monthly learners. I started as the only engineer,
+    made the first hire in 2024, and left behind a codebase my successor now runs on his own.
 
-    I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch
-    real regressions, migrations that don't break users. That discipline matters more now, not less —
-    typed contracts, enforced boundaries, and mutation-tested suites are what make AI-accelerated
-    development safe to ship. I'm looking for a senior engineering role where that's the work.
+    That platform is the proof of how I work: intent encoded explicitly in types, schemas, and enforced
+    boundaries. This discipline keeps a codebase safe to change, for humans and AI tools alike.
   `,
 } as const;
 
@@ -112,11 +110,22 @@ export const sideProjects = [
 
 export const focusSection = {
   title: 'How I work',
-  body: [
-    'I start with the domain model and keep business logic isolated from infrastructure, so the parts that matter most are easy to test and hard to break. Documentation and lint rules get the same care as features, because they keep humans and AI tools pointed at the same invariants.',
-    'Day to day that means TypeScript end to end: React or Solid on the client, Node and PostgreSQL on the server, Zod at the boundaries. I enjoy UI polish, but architecture is where I do my deepest work.',
-    'The “classical” in classicalmoser.dev is a conviction. I trained as a classical musician, but the deeper thread is a belief in the timeless — classical architecture and urbanism, things crafted with care and pride, work meant to carry value across generations.',
-  ],
+  body: paragraphs`
+    As a lifelong lover of classical music, art, and architecture, I build for continuity and longevity
+    over rapid sprawl. That means encoding human intent clearly in the code itself: explicit types and
+    schemas, enforced boundaries and dependency directions, and strict tooling enforcement. What has always
+    been good for human collaboration is especially important for AI agents, and documentation and tools still
+    cannot do the work that imitation of sound patterns does.
+
+    I learned this by paying for the alternative. I built LearnCraft fast and untyped, then spent years
+    migrating it in place under live traffic to undo the bottlenecks I had inadvertently introduced.
+    The success of this work has enabled my successor to manage the platform on his own; sound architecture
+    outlasts its builders.
+
+    My typical stack is TypeScript end to end: React or Solid on the client, Node and PostgreSQL on the
+    server, Zod at the boundaries. I care about UI and accessibility, but architecture and systems design
+    are where I do my deepest work.
+  `,
   stackCardTitle: 'Stack & tooling',
   stackCardDescription: 'The tools I reach for most.',
   stackHint:
