@@ -13,7 +13,6 @@ export function LearnCraftSpanishArticle() {
         <h1 class="mt-2 text-balance font-heading text-3xl tracking-tight sm:text-4xl md:text-5xl">
           {page.title}
         </h1>
-        <p class="mt-2 text-sm text-muted-foreground sm:text-base">{page.role}</p>
         <div class="mt-6 space-y-4 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
           <For each={[...page.lead]}>{(paragraph) => <p>{paragraph}</p>}</For>
         </div>
@@ -32,13 +31,6 @@ export function LearnCraftSpanishArticle() {
                   <ol class="list-decimal space-y-2 border-l border-border pl-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
                     <For each={[...steps()]}>{(step) => <li class="pl-1">{step}</li>}</For>
                   </ol>
-                )}
-              </Show>
-              <Show when={'afterList' in section && section.afterList}>
-                {(afterList) => (
-                  <div class="space-y-4 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-                    <For each={[...afterList()]}>{(paragraph) => <p>{paragraph}</p>}</For>
-                  </div>
                 )}
               </Show>
               <Show when={'videos' in section && section.videos}>

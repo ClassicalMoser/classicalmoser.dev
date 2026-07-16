@@ -167,12 +167,6 @@ export const learncraftSpanish = {
         'Mutation testing, to measure whether test assertions are meaningful',
         'Documentation of boundary rules and dependency directions, and linter rules to enforce them',
       ],
-      links: [
-        {
-          href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
-          label: 'Frontend repository',
-        },
-      ],
     },
     {
       title: 'Potential unlocked',
