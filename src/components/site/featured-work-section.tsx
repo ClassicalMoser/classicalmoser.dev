@@ -13,11 +13,11 @@ export function FeaturedWorkSection() {
 
       <div class="grid gap-10 lg:grid-cols-[1.2fr_minmax(0,1fr)] lg:gap-14">
         <div class="space-y-6">
-          <p class="text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            {featuredWork.summary}
-          </p>
-          <ul class="space-y-3 border-l border-border pl-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            <For each={[...featuredWork.highlights]}>{(item) => <li>{item}</li>}</For>
+          <div class="space-y-4 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <For each={[...featuredWork.summary]}>{(paragraph) => <p>{paragraph}</p>}</For>
+          </div>
+          <ul class="list-disc space-y-3 border-l border-border pl-6 text-sm leading-relaxed text-muted-foreground sm:text-base">
+            <For each={[...featuredWork.highlights]}>{(item) => <li class="pl-1">{item}</li>}</For>
           </ul>
         </div>
         <aside class="flex h-fit flex-col gap-5 border border-border/80 bg-card p-5 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -35,22 +35,7 @@ export function FeaturedWorkSection() {
             <Button as="a" href={featuredWork.caseStudy.href} variant="default" size="default">
               {featuredWork.caseStudy.label}
             </Button>
-            <For each={[...featuredWork.links]}>
-              {(link) => (
-                <Button
-                  as="a"
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant={link.variant}
-                  size="default"
-                >
-                  {link.label}
-                </Button>
-              )}
-            </For>
           </div>
-          <p class="text-pretty text-xs leading-snug sm:text-sm">{featuredWork.closer}</p>
         </aside>
       </div>
     </section>

@@ -240,7 +240,7 @@ export const learncraftSpanish = {
       links: [
         {
           href: 'https://app.learncraftspanish.com',
-          label: 'Live site',
+          label: 'Live app',
         },
       ],
     },

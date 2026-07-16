@@ -42,8 +42,10 @@ export const hero = {
     and matured a learning platform used by over 3,000 monthly learners. I started as the only engineer,
     made the first hire in 2024, and left behind a codebase my successor now runs on his own.
 
-    That platform is the proof of how I work: intent encoded explicitly in types, schemas, and enforced
-    boundaries. This discipline keeps a codebase safe to change, for humans and AI tools alike.
+    Every part of that platform was built to outlast me. The intent lives in explicit types, schemas, and
+    enforced boundaries rather than in my head, which is what made it easy to hand off and safe for AI tools
+    to work in. I'm currently seeking further opportunities to build durable systems, whether full-time
+    or contract.
   `,
 } as const;
 
@@ -51,36 +53,25 @@ export const hero = {
 export const featuredWork = {
   title: 'LearnCraft Spanish',
   role: 'Director of Technology · 2022–2026',
-  summary:
-    'A grammar-based quizzing and student record platform for a language coaching company. I designed and built the web stack, ran it in production for four years, and rearchitected it under live traffic without a rewrite or a relaunch.',
+  summary: paragraphs`
+    A grammar-based quizzing and student record platform for a language coaching company. I designed
+    and built the web stack, ran it in production for four years, and rearchitected it under live traffic
+    without a ground-up rewrite or downtime.
+  `,
   highlights: [
-    'Converted an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, migrating in place while feature work continued.',
-    'Locked down student data with server-enforced roles, JWT-authoritative auth, and Zod validation on everything crossing the wire.',
-    'Kept the codebase safe to hand off: a mutation-tested domain core, architecture rules that fail CI when violated, and documentation thorough enough that my successor runs the platform solo.',
+    'Strangler-fig migration from an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, while feature work continued uninterrupted.',
+    'Student data locked down with server-enforced roles, JWT-authoritative auth, and Zod validation on everything crossing the wire.',
+    'Built to outlast its builder: a mutation-tested domain core, architecture rules that fail CI when violated, and patterns clear enough that both my successor and AI tools follow them by default.',
   ],
   stats: [
     { value: '~3,000', label: 'monthly active learners' },
     { value: '4 years', label: 'of continuous delivery, no rewrite or relaunch' },
     { value: '78%', label: 'of surveyed users would be “very disappointed” to lose it (n = 205)' },
   ],
-  closer:
-    'The app sits behind a subscription, but the frontend repo is public and the case study includes recorded walkthroughs.',
   caseStudy: {
     href: learncraftSpanishPath,
     label: 'Read the case study',
   },
-  links: [
-    {
-      href: 'https://github.com/LearnCraft-Spanish/learncraft-spanish',
-      label: 'Public repository',
-      variant: 'outline' as const,
-    },
-    {
-      href: 'https://www.learncraftspanish.com/',
-      label: 'Company site',
-      variant: 'ghost' as const,
-    },
-  ],
 } as const;
 
 /** Secondary work — tooling and projects in public. */
@@ -88,14 +79,14 @@ export const sideProjects = [
   {
     title: 'eslint-plugin-import-boundaries',
     description:
-      'ESLint rules that keep imports honest as a codebase grows: architectural boundaries enforced through pure AST evaluation, no filesystem reads. Published on npm — this site lints with it.',
+      'ESLint rules that keep imports honest as a codebase grows: architectural boundaries enforced through pure AST evaluation, no filesystem reads. Published on npm and used in all my projects.',
     href: 'https://www.npmjs.com/package/eslint-plugin-import-boundaries',
     linkLabel: 'Package',
   },
   {
     title: 'Prevail: Ancient Battles',
     description:
-      'The rules engine for a tabletop-style ancient warfare game I’m designing. Stateless, event-sourced, and fully replayable, with 1,500+ tests and a ~86% mutation score.',
+      'The rules engine for a tabletop-style ancient warfare game I’m designing. Stateless, event-sourced, fully and headlessly replayable, with 1,500+ tests and a ~86% mutation score.',
     href: 'https://github.com/ClassicalMoser/prevail-rules',
     linkLabel: 'Repository',
   },
