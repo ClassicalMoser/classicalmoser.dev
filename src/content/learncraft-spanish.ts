@@ -116,8 +116,9 @@ export const learncraftSpanish = {
         database solution.
 
         The deeper challenge was that I had been building everything more tightly coupled to the existing
-        data platform than I realized, and even if we could have migrated the data, the queries scattered,
-        syntax, and other vendor-specific details would have prevented us from using it.
+        data platform than I realized, and even if we could have migrated the data, the queries scattered
+        throughout the codebase, the proprietary syntax, and other vendor-specific details would have
+        prevented us from using it.
 
         I had to either accept the limitations and compounding technical debt, rewrite the entire app
         from scratch (freezing all features until the whole migration was completed), or find a way to
@@ -233,7 +234,7 @@ export const learncraftSpanish = {
         lose the product (the traditional Sean Ellis PMF benchmark is 40%), and it is regularly
         mentioned directly in student reviews and surveys.
 
-        While most of the functionality is available only through the premier coaching program, the
+        While most of the functionality is available only through the coaching program, the
         quizzes for the public courses are available to use for free:
       `,
       links: [

@@ -4,6 +4,7 @@
  */
 
 import { learncraftSpanishPath } from './learncraft-spanish';
+import { paragraphs } from './paragraphs';
 
 export const person = {
   name: 'Josiah Moser',
@@ -22,9 +23,9 @@ export const resume = {
 export const site = {
   siteName: 'classicalmoser.dev',
   url: 'https://classicalmoser.dev',
-  title: 'Josiah Moser · Technical leadership & systems architecture',
+  title: 'Josiah Moser · Senior Software Engineer · Systems architecture',
   description:
-    'Josiah Moser is a software engineer and technical leader in Tulsa, OK. He built and ran the LearnCraft Spanish platform (~3,000 monthly learners) for four years and maintains open-source tooling for architectural boundaries.',
+    'Josiah Moser is a senior software engineer in Tulsa, OK. He built and ran the LearnCraft Spanish platform (~3,000 monthly learners) for five years and maintains open-source tooling for architectural boundaries.',
 } as const;
 
 /** Served from `public/` — same paths at build time (SSG) and runtime. */
@@ -35,11 +36,17 @@ export const profileImage = {
 } as const;
 
 export const hero = {
-  eyebrow: 'Technical leadership · Systems architecture',
-  lead: [
-    'For the last four years I was Director of Technology at LearnCraft Spanish, where I designed and ran a subscription learning platform used by about 3,000 monthly learners. I started as the only engineer, made the first hire in 2024, and left behind a codebase my successor now runs on his own.',
-    'I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch real regressions, migrations that don’t break users. I’m looking for a senior engineering or technical-leadership role building software that’s meant to last.',
-  ],
+  eyebrow: 'Senior Software Engineer · Systems architecture',
+  lead: paragraphs`
+    For the last four years I was Director of Technology at LearnCraft Spanish, where I designed and
+    ran a subscription learning platform used by about 3,000 monthly learners. I started as the only
+    engineer, made the first hire in 2024, and left behind a codebase my successor now runs on his own.
+
+    I care about the unglamorous parts of engineering: validation at the boundaries, tests that catch
+    real regressions, migrations that don't break users. That discipline matters more now, not less —
+    typed contracts, enforced boundaries, and mutation-tested suites are what make AI-accelerated
+    development safe to ship. I'm looking for a senior engineering role where that's the work.
+  `,
 } as const;
 
 /** The production credibility artifact — given visual weight on the page. */
@@ -97,7 +104,7 @@ export const sideProjects = [
   {
     title: 'PortableNote',
     description:
-      'An open spec for portable personal notes, in progress: a compliance test suite, a hexagonal Rust core, and a SolidJS client over a Tauri bridge.',
+      'An open spec for portable personal notes: a compliance test suite, a hexagonal Rust core, and a SolidJS client over a Tauri bridge.',
     href: 'https://github.com/ClassicalMoser/portablenote',
     linkLabel: 'Repository',
   },
@@ -113,12 +120,11 @@ export const focusSection = {
   stackCardTitle: 'Stack & tooling',
   stackCardDescription: 'The tools I reach for most.',
   stackHint:
-    'TypeScript · Node · React · Solid · Vite · PostgreSQL · Zod · TanStack Query · Vitest · Stryker',
+    'TypeScript · Node · React · Solid · Vite · PostgreSQL · Zod · TanStack Query · Vitest · Stryker · GitHub Actions · Netlify · Cloudflare · Auth0',
 } as const;
 
 export const connectCopy = {
-  blurb:
-    'If you’re hiring, or want a walkthrough of the LearnCraft work, email me. I read everything.',
+  blurb: `If you're hiring, looking for a contractor, or just curious about the LearnCraft work, send me an email. I'm available immediately and happy to share what I've learned.`,
   resumeNote: {
     lead: 'typeset in ',
     typstLabel: 'Typst',
