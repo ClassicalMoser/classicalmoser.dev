@@ -1,5 +1,6 @@
 import { For } from 'solid-js';
 import { Menu } from 'lucide-solid';
+import { resume, socialLinks } from '@content';
 import { Sheet, SheetClose, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@ui';
 
 const navLinks = [
@@ -21,6 +22,25 @@ export function SiteHeader() {
             {(link) => (
               <a href={link.href} class="transition-colors hover:text-foreground">
                 {link.label}
+              </a>
+            )}
+          </For>
+          <a href={resume.pdfHref} target="_blank" class="transition-colors hover:text-foreground">
+            Résumé
+          </a>
+          <span class="h-4 w-px bg-border" aria-hidden="true" />
+          <For each={[...socialLinks]}>
+            {(item) => (
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.label}
+                class="transition-colors hover:text-foreground"
+              >
+                <svg class="size-4" role="presentation" aria-hidden="true">
+                  <use href={`#${item.iconId}`} />
+                </svg>
               </a>
             )}
           </For>
@@ -51,6 +71,34 @@ export function SiteHeader() {
                   </SheetClose>
                 )}
               </For>
+              <SheetClose
+                as="a"
+                href={resume.pdfHref}
+                target="_blank"
+                aria-label="Résumé (PDF)"
+                class="py-2.5 text-left text-base text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Résumé
+              </SheetClose>
+              <div class="mt-2 flex gap-4 border-t border-border/80 pt-4">
+                <For each={[...socialLinks]}>
+                  {(item) => (
+                    <SheetClose
+                      as="a"
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                      class="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <svg class="size-4" role="presentation" aria-hidden="true">
+                        <use href={`#${item.iconId}`} />
+                      </svg>
+                      {item.label}
+                    </SheetClose>
+                  )}
+                </For>
+              </div>
             </nav>
           </SheetContent>
         </Sheet>

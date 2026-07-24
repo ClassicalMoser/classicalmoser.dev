@@ -1,5 +1,5 @@
 import { For } from 'solid-js';
-import { hero, person, profileImage } from '@content';
+import { hero, person, profileImage, resume } from '@content';
 import { Button } from '@ui';
 
 export function HeroSection() {
@@ -13,8 +13,14 @@ export function HeroSection() {
           <h1 class="mt-2 text-balance font-display text-3xl leading-[1.15] tracking-wide sm:text-4xl md:text-5xl">
             {person.name}
           </h1>
-          <p class="text-sm text-muted-foreground">{person.location}</p>
+          <p class="text-sm text-muted-foreground">
+            {person.location} · {hero.stack}
+          </p>
         </div>
+        <p class="inline-flex w-fit items-center gap-2 border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground">
+          <span class="size-2 shrink-0 rounded-full bg-emerald-500" aria-hidden="true" />
+          {hero.availability}
+        </p>
         <div class="max-w-xl space-y-4 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
           <For each={[...hero.lead]}>{(p) => <p>{p}</p>}</For>
         </div>
@@ -22,7 +28,10 @@ export function HeroSection() {
           <Button as="a" href={mailto} variant="default" size="default">
             Email me
           </Button>
-          <Button as="a" href="#work" variant="outline" size="default">
+          <Button as="a" href={resume.pdfHref} variant="outline" size="default" target="_blank">
+            Résumé (PDF)
+          </Button>
+          <Button as="a" href="#work" variant="ghost" size="default">
             See featured work
           </Button>
         </div>

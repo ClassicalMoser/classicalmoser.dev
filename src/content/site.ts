@@ -23,7 +23,7 @@ export const resume = {
 export const site = {
   siteName: 'classicalmoser.dev',
   url: 'https://classicalmoser.dev',
-  title: 'Josiah Moser · Senior Software Engineer · Systems architecture',
+  title: 'Josiah Moser · Senior Software Engineer · Full-Stack TypeScript',
   description:
     'Josiah Moser is a senior software engineer in Tulsa, OK. He built and ran the LearnCraft Spanish platform (~3,000 monthly learners) for five years and maintains open-source tooling for architectural boundaries.',
 } as const;
@@ -36,16 +36,18 @@ export const profileImage = {
 } as const;
 
 export const hero = {
-  eyebrow: 'Senior Software Engineer · Systems architecture',
+  eyebrow: 'Senior Software Engineer · Full-Stack TypeScript',
+  stack: 'TypeScript · React / Solid · Node · PostgreSQL',
+  availability: 'Available immediately for full-time or contract work',
   lead: paragraphs`
     For the last four years I was Director of Technology at LearnCraft Spanish, where I designed, built,
     and matured a learning platform used by over 3,000 monthly learners. I started as the only engineer,
     made the first hire in 2024, and left behind a codebase my successor now runs on his own.
 
-    Every part of that platform was built to outlast me. The intent lives in explicit types, schemas, and
-    enforced boundaries rather than in my head, which is what made it easy to hand off and safe for AI tools
-    to work in. I'm currently seeking further opportunities to build durable systems, whether full-time
-    or contract.
+    I built that platform to outlast me. The intent lives in explicit types and schemas instead of in my
+    head, and the tooling enforces it. CI blocks any merge that fails the architecture checklist, the
+    domain core is mutation-tested, and lint rules enforce boundaries and dependency directions. This is what made the
+    codebase safe to hand off, and what makes it safe for AI tools to ship into.
   `,
 } as const;
 
@@ -61,7 +63,7 @@ export const featuredWork = {
   highlights: [
     'Strangler-fig migration from an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, while feature work continued uninterrupted.',
     'Student data locked down with server-enforced roles, JWT-authoritative auth, and Zod validation on everything crossing the wire.',
-    'Built to outlast its builder: a mutation-tested domain core, architecture rules that fail CI when violated, and patterns clear enough that both my successor and AI tools follow them by default.',
+    'Correctness enforced by tooling rather than by review: a mutation-tested domain core, an architecture checklist that hard-blocks any CI merge that violates it, and lint-enforced boundaries. The patterns are clear enough that my successor and AI tools follow them by default.',
   ],
   stats: [
     { value: '~3,000', label: 'monthly active learners' },

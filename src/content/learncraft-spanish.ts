@@ -39,7 +39,7 @@ export const learncraftSpanish = {
       body: paragraphs`
         LearnCraft Spanish is a premium Spanish coaching business focused on genuine
         fluency for adult learners. It has always been unapologetically grammar-focused,
-        targeting motiviated English speakers who want to do the hard work it takes to 
+        targeting motivated English speakers who want to do the hard work it takes to 
         be able to connect meaningfully with the native Spanish speakers in their daily lives.
 
         Since the company was established in 2014, I had helped out part-time with early messaging,
@@ -149,7 +149,7 @@ export const learncraftSpanish = {
       body: paragraphs`
         I had started rolling out TypeScript in early 2024, the first move in what became a much longer plan.
         My intention was to complete the rearchitecture-in-place with the lights on the full time, and to get it
-        get it done the right way so that it would never have to be done again.
+        done the right way so that it would never have to be done again.
 
         Early on, the process started in one direction and then had to double back when the result either
         wasn't rigorous enough for long-term maintainability, or ended up adding more indirection than value.
@@ -202,7 +202,7 @@ export const learncraftSpanish = {
 
         My final months were spent preparing the codebase for long-term continuation by Blake and any
         future engineers, as well as for the increasing impact of AI tools on the codebase. One
-        positive outocome of the restructuring was that the codebase patterns and practices were
+        positive outcome of the restructuring was that the codebase patterns and practices were
         clear enough that AI tools imitating their surroundings would naturally follow our best
         practices, and we were able to leverage them more and more effectively through 2025 and beyond.
 
