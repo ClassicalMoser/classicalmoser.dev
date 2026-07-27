@@ -40,14 +40,12 @@ export const hero = {
   stack: 'TypeScript · React / Solid · Node · PostgreSQL',
   availability: 'Available immediately for full-time or contract work',
   lead: paragraphs`
-    For the last four years I was Director of Technology at LearnCraft Spanish, where I designed, built,
-    and matured a learning platform used by over 3,000 monthly learners. I started as the only engineer,
+    I spent five years building the LearnCraft Spanish learning platform, the last four of them as
+    Director of Technology, and grew it to over 3,000 monthly learners. I started as the only engineer,
     made the first hire in 2024, and left behind a codebase my successor now runs on his own.
 
     I built that platform to outlast me. The intent lives in explicit types and schemas instead of in my
-    head, and the tooling enforces it. CI blocks any merge that fails the architecture checklist, the
-    domain core is mutation-tested, and lint rules enforce boundaries and dependency directions. This is what made the
-    codebase safe to hand off, and what makes it safe for AI tools to ship into.
+    head, and the build fails when someone works around them.
   `,
 } as const;
 
@@ -57,17 +55,16 @@ export const featuredWork = {
   role: 'Director of Technology · 2022–2026',
   summary: paragraphs`
     A grammar-based quizzing and student record platform for a language coaching company. I designed
-    and built the web stack, ran it in production for four years, and rearchitected it under live traffic
-    without a ground-up rewrite or downtime.
+    and built the web stack and ran it in production for five years.
   `,
   highlights: [
-    'Strangler-fig migration from an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, while feature work continued uninterrupted.',
+    'Strangler-fig migration from an untyped JavaScript monolith to strict TypeScript with hexagonal boundaries, carried out under live traffic with no rewrite, relaunch, or downtime.',
     'Student data locked down with server-enforced roles, JWT-authoritative auth, and Zod validation on everything crossing the wire.',
-    'Correctness enforced by tooling rather than by review: a mutation-tested domain core, an architecture checklist that hard-blocks any CI merge that violates it, and lint-enforced boundaries. The patterns are clear enough that my successor and AI tools follow them by default.',
+    'Correctness enforced by tooling rather than by review: a mutation-tested domain core, an architecture checklist that hard-blocks any CI merge that violates it, and lint-enforced boundaries. The patterns are clear enough that AI tools follow them by default.',
   ],
   stats: [
     { value: '~3,000', label: 'monthly active learners' },
-    { value: '4 years', label: 'of continuous delivery, no rewrite or relaunch' },
+    { value: '5 years', label: 'of continuous delivery on one codebase' },
     { value: '78%', label: 'of surveyed users would be “very disappointed” to lose it (n = 205)' },
   ],
   caseStudy: {
@@ -105,19 +102,16 @@ export const focusSection = {
   title: 'How I work',
   body: paragraphs`
     As a lifelong lover of classical music, art, and architecture, I build for continuity and longevity
-    over rapid sprawl. That means encoding human intent clearly in the code itself: explicit types and
-    schemas, enforced boundaries and dependency directions, and strict tooling enforcement. What has always
-    been good for human collaboration is especially important for AI agents, and documentation and tools still
-    cannot do the work that imitation of sound patterns does.
+    over rapid sprawl. That means encoding human intent in the code itself rather than in documentation
+    that drifts away from it. Whoever reads the code next, human or otherwise, should be able to infer
+    the right pattern by imitation; no amount of prose does the work that a sound pattern does.
 
-    I learned this by paying for the alternative. I built LearnCraft fast and untyped, then spent years
-    migrating it in place under live traffic to undo the bottlenecks I had inadvertently introduced.
-    The success of this work has enabled my successor to manage the platform on his own; sound architecture
-    outlasts its builders.
+    I learned this by paying for the alternative. I built LearnCraft fast and untyped, and then spent
+    years undoing the bottlenecks I had inadvertently introduced. Sound architecture outlasts its
+    builders, and I would rather pay for it up front than pay for it twice.
 
-    My typical stack is TypeScript end to end: React or Solid on the client, Node and PostgreSQL on the
-    server, Zod at the boundaries. I care about UI and accessibility, but architecture and systems design
-    are where I do my deepest work.
+    I work in TypeScript end to end. I care about UI and accessibility, but architecture and systems
+    design are where I do my deepest work.
   `,
   stackCardTitle: 'Stack & tooling',
   stackCardDescription: 'The tools I reach for most.',

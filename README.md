@@ -23,7 +23,7 @@ Import boundaries between layers (`content` → `ui` → `components` → `pages
 
 ## Editing content
 
-All copy lives in `src/content/` as typed data — components under `src/components/site/` only render it. Content tests pin section structure (e.g. case-study section titles), so retitling a section means updating its test alongside it.
+All copy lives in `src/content/` as typed data — components under `src/components/site/` only render it. Tests cover behaviour (routing, prerender paths, the `paragraphs` helper), not copy strings, so prose changes stand on review alone.
 
 Voice: plain, first-person, concrete. Claims stay verifiable (numbers, dates, links); no marketing gloss.
 
